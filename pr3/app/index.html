@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="uk">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#292347"><meta name="description" content="Life RPG — план дня, звички та власні нагороди за виконані справи."><title>Life RPG — твій план дня</title><link rel="stylesheet" href="styles.css"><script src="app.js" defer></script></head>
+<body>
+<a class="skip" href="#main">Перейти до вмісту</a>
+<div class="app">
+ <aside class="sidebar" aria-label="Головна навігація">
+  <a class="brand" href="#today"><span class="brand-mark" aria-hidden="true">L<span>+</span></span><span>Life RPG<small>Маленькі справи. Твій прогрес.</small></span></a>
+  <div class="nav-label">ТВІЙ ПРОСТІР</div>
+  <nav id="nav"></nav>
+  <div class="side-note"><span class="spark" aria-hidden="true">✦</span><strong>Кожен день — новий крок</strong><p>Почни з однієї справи. Великі плани можуть зачекати.</p></div>
+  <button class="side-profile" data-view="profile"><span class="avatar" id="side-initial">Д</span><span id="side-name">Данііл</span><span aria-hidden="true">↗</span></button>
+ </aside>
+ <div class="workspace">
+  <header class="topbar"><span class="breadcrumb">Мій простір <span>/</span> <strong id="crumb">План дня</strong></span><div class="top-actions"><button class="quiet help-button" id="help-btn" aria-label="Як користуватися Life RPG">? <span>Як це працює</span></button><button class="profile-dot" data-view="profile" aria-label="Відкрити профіль">Д</button></div></header>
+  <main id="main" tabindex="-1"><div id="page"></div></main>
+  <footer>Life RPG <span>Твій темп. Твої маленькі перемоги.</span><a href="wireframes.html">Начерки інтерфейсу</a></footer>
+ </div>
+</div>
+<dialog id="task-dialog" aria-labelledby="task-dialog-title">
+ <form id="task-form">
+  <div class="dialog-head"><div><span class="eyebrow">ТВІЙ НАСТУПНИЙ КРОК</span><h2 id="task-dialog-title">Нове завдання</h2></div><button type="button" class="icon-button" data-close="task-dialog" aria-label="Закрити вікно">×</button></div>
+  <label>Що хочеш зробити?<input id="task-title" name="title" aria-describedby="task-error" aria-invalid="false" required maxlength="100" placeholder="Наприклад, прочитати 10 сторінок" autocomplete="off"></label>
+  <div class="form-row"><label>Дата<input type="date" name="date" id="task-date" required></label><label>Час<input type="time" name="time" value="10:00" required></label></div>
+  <div class="form-row"><label>Тривалість, хв<input type="number" name="duration" value="30" min="5" max="480" step="5" required></label><label>Категорія<select name="category"><option value="study">Навчання</option><option value="work">Робота</option><option value="health">Рух і здоров’я</option><option value="personal">Для себе</option></select></label></div>
+  <div class="form-row"><label>Повторення<select name="repeat"><option value="none">Не повторювати</option><option value="daily">Щодня</option><option value="weekdays">У будні</option></select></label><label>Складність<select name="difficulty" id="task-difficulty"><option value="easy">Невеликий крок</option><option value="medium" selected>Звичайна справа</option><option value="hard">Потребує зусиль</option></select></label></div>
+  <div class="reward-preview" id="reward-preview">За виконання: +25 XP та +5 монет</div>
+  <p class="form-error" id="task-error" role="alert"></p>
+  <div class="dialog-actions"><button type="button" class="quiet" data-close="task-dialog">Скасувати</button><button class="primary" type="submit">Зберегти завдання</button></div>
+ </form>
+</dialog>
+<dialog id="help-dialog" aria-labelledby="help-title"><div class="dialog-head"><h2 id="help-title">Твій день у Life RPG</h2><button class="icon-button" data-close="help-dialog" aria-label="Закрити підказку">×</button></div><ol class="help-list"><li><strong>Склади посильний план.</strong> Додай справу, час і тривалість.</li><li><strong>Виконай і познач.</strong> За кожне виконання отримаєш досвід та монети.</li><li><strong>Обери відпочинок.</strong> Обмінюй монети на власні нагороди.</li></ol><p class="muted">Це навчальна локальна версія. Дані зберігаються тільки в цьому браузері. Пароль і підключення до мережі не потрібні.</p><button class="primary full" data-close="help-dialog">Почати свій день</button></dialog>
+<dialog id="delete-dialog" aria-labelledby="delete-title"><h2 id="delete-title">Видалити завдання?</h2><p>Завдання зникне з плану та майбутніх повторень. Уже отриманий досвід залишиться в історії.</p><div class="dialog-actions"><button class="quiet" data-close="delete-dialog">Залишити</button><button class="danger" id="confirm-delete">Видалити завдання</button></div></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="storage-warning" class="storage-warning" hidden role="alert">Браузер не дозволив зберегти зміни. Не закривай сторінку, поки не ввімкнеш локальне сховище.</div>
+</body></html>

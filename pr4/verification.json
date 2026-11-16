@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-17",
+  "method": "Anonymous GET, no AWS credentials or cookies",
+  "local_sha256": "2ef2e6eafc8b2fe9f76e6199a510fb2f7c8664f10b8784f3cb81f62265322000",
+  "checks": [
+    {
+      "url": "http://daniil-slutskovskyi-apz-121-23-2.s3-website.eu-north-1.amazonaws.com/",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 6604,
+      "sha256": "2ef2e6eafc8b2fe9f76e6199a510fb2f7c8664f10b8784f3cb81f62265322000",
+      "matches_local_html": true
+    },
+    {
+      "url": "https://daniil-slutskovskyi-apz-121-23-2.s3.eu-north-1.amazonaws.com/index.html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 6604,
+      "sha256": "2ef2e6eafc8b2fe9f76e6199a510fb2f7c8664f10b8784f3cb81f62265322000",
+      "matches_local_html": true
+    },
+    {
+      "url": "https://daniil-slutskovskyi-apz-121-23-2.s3.eu-north-1.amazonaws.com/?list-type=2",
+      "status": 403
+    }
+  ]
+}

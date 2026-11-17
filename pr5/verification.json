@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-17",
+  "checks": [
+    {
+      "check": "Windows Server 2025 запущено",
+      "actual": "Running у консолі EC2",
+      "status": "PASS"
+    },
+    {
+      "check": "Параметри інстансу",
+      "actual": "t3.small, 2 vCPU, 2 GiB RAM, EBS gp3 30 GiB",
+      "status": "PASS"
+    },
+    {
+      "check": "Вхід через RDP",
+      "actual": "Вхід виконано; робочий стіл спостерігався в активному сеансі",
+      "status": "PASS"
+    },
+    {
+      "check": "Персоналізація",
+      "actual": "На робочому столі видно ПІБ та групу 121-23-2",
+      "status": "PASS"
+    },
+    {
+      "check": "Доступ для перевірки",
+      "actual": "Збережено правило TCP 3389, джерело 0.0.0.0/0",
+      "status": "PASS"
+    }
+  ],
+  "evidence": "AWS Console UI and actual mstsc remote desktop screenshot",
+  "scope": "Вхід перевірено з комп’ютера власника; окремий вхід викладача ще не виконувався."
+}
